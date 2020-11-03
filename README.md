@@ -1,5 +1,6 @@
-seccamp z3 redos<br>
+**seccamp z3 redos**<br>
 セキュリティ・キャンプ全国大会2020 オンライン <br>
+<br>
 
 [Z-Ⅲ] ReDoSの検出プログラムの作成とOSSへの適用 <br>
 
