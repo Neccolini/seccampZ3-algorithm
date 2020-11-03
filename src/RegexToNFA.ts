@@ -66,7 +66,7 @@ class RegexToNFA {
     }
 
     private Add(e: edge): void {
-        //Stateの長さが足りなかったらその分だけ追加
+        //this.NFAの長さが足りなかったらその分だけ追加
         if (this.NFA.length <= e.to) {
             for (let i = 0; i <= e.to + 1 - this.NFA.length; i++) {
                 let q: State = { id: this.NFA.length + i, transition: [] };
@@ -91,7 +91,7 @@ class RegexToNFA {
 }
 
 
-
+//test
 let NFA = new RegexToNFA("(ab|c)");
 for (let i = 0; i < NFA.NFA.length; i++) {
     console.log(NFA.NFA[i]);
