@@ -181,11 +181,11 @@ var RegexToNFA = /** @class */ (function () {
                 break;
         }
     };
-    RegexToNFA.prototype.AddNode = function (length) {
-        //this.NFA.length==lengthになるまでnodeを追加
-        if (this.NFA.length <= length) {
+    RegexToNFA.prototype.AddNode = function (l) {
+        //this.NFA.length==lになるまでnodeを追加
+        if (this.NFA.length <= l) {
             var length_3 = this.NFA.length;
-            for (var i = 0; i < length_3 + 1 - length_3; i++) {
+            for (var i = 0; i < l + 1 - length_3; i++) {
                 var q = { id: this.NFA.length + i, transition: [] };
                 this.NFA.push(q);
             }
@@ -230,6 +230,6 @@ var RegexToNFA = /** @class */ (function () {
     return RegexToNFA;
 }());
 //test
-var NFA = new RegexToNFA("(a|b|c*)+");
+var NFA = new RegexToNFA("(a|b|c*)+"); //->Ok
 NFA.debug();
 NFA.NFAToGraph();

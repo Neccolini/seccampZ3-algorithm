@@ -190,11 +190,11 @@ class RegexToNFA {
         }
     }
 
-    private AddNode(length:number){
-        //this.NFA.length==lengthになるまでnodeを追加
-        if (this.NFA.length <= length) {
+    private AddNode(l:number){
+        //this.NFA.length==lになるまでnodeを追加
+        if (this.NFA.length <= l) {
             let length: number = this.NFA.length;
-            for (let i = 0; i < length + 1 - length; i++) {
+            for (let i = 0; i < l + 1 - length; i++) {
                 let q: State = { id: this.NFA.length + i, transition: [] };
                 this.NFA.push(q);
             }
@@ -241,10 +241,9 @@ class RegexToNFA {
 
 }
 
-/*
+
 //test
 let NFA = new RegexToNFA("(a|b|c*)+");//->Ok
 NFA.debug();
 NFA.NFAToGraph();
 
-*/
